@@ -1,0 +1,18 @@
+
+networks:
+  public:
+    external: true
+
+services:
+  tunnel:
+      image: cloudflare/cloudflared
+      container_name: tunnel
+      restart: always
+      command: tunnel run
+      environment:
+        - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+      networks:
+        - public
+      volumes:
+        - /data/docker/tunnel:/etc/cloudflared
+

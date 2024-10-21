@@ -1,0 +1,21 @@
+services:
+  nextcloud:
+    image: lscr.io/linuxserver/nextcloud:latest
+    container_name: nextcloud
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - /data/docker/nextcloud/config:/config
+      - /data/nextcloud:/data
+    networks:
+      - public
+   # ports:
+   #   - 443:443
+    restart: unless-stopped
+
+
+networks:
+  public:
+    external: true

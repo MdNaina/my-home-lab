@@ -1,0 +1,17 @@
+services:
+  freshrss:
+    image: lscr.io/linuxserver/freshrss:latest
+    container_name: freshrss
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - /data/docker/freshrss/config:/config
+    networks:
+      - public
+    restart: unless-stopped
+
+networks:
+  public:
+    external: true

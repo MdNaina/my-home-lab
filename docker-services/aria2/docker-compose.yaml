@@ -1,0 +1,18 @@
+services:
+  aria2-ui:
+    container_name: downloader
+    restart: unless-stopped
+    image: wahyd4/aria2-ui:latest
+    environment:
+      - ENABLE_AUTH=true
+      - ARIA2_USER=hello
+      - ARIA2_PWD=world
+      - DOMAIN=https://dl.2kdeveloper.com
+    volumes:
+      - /data/downloads:/data
+    networks:
+      - public
+
+networks:
+  public:
+    external: true

@@ -1,0 +1,15 @@
+services:
+    openbooks:
+        container_name: openbooks
+        image: evanbuss/openbooks:latest
+        command: --name my_irc_name --persist
+        restart: unless-stopped
+        volumes:
+            - '/data/docker/openbooks/books:/books'
+        networks:
+          - public
+
+networks:
+  public:
+    external: true
+
