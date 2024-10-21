@@ -1,4 +1,0 @@
-
-> /usr/local/bin/archivebox schedule --foreground --update --every=day; TS=2024-10-18__04:09:13 VERSION=0.7.2 IN_DOCKER=True IS_TTY=False
-
-> /usr/local/bin/archivebox schedule --foreground --update --every=day; TS=2024-10-18__04:15:32 VERSION=0.7.2 IN_DOCKER=True IS_TTY=False
